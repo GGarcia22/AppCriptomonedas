@@ -1,0 +1,36 @@
+﻿@model Cuenta
+@{
+    ViewData["Title"] = "MenuPrincipal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mercados</h2>
+<div class="card">
+    <div class="card-header">
+        Pesos
+    </div>
+    <div class="card-body">
+        <a asp-action="Listar" asp-controller="CRUD" id="boton">Comprar</a>
+        <label>ARS$ @CuentaPesos.VALOR_DOLAR = 1 U$D</label>
+    </div>
+    <div class="card-header">
+        Dolar
+    </div>
+    <div class="card-body">
+        <a asp-action="Listar" asp-controller="CRUD" id="boton">Comprar</a>
+        <label>U$D @CuentaDolares.VALOR_PESO = 1 ARS$<br /></label>
+        <label>U$D @CuentaDolares.VALOR_BTC = 1 BTC</label>
+    </div>
+    <div class="card-header">
+        Bitcoin
+    </div>
+    <div class="card-body">
+        <a asp-action="Listar" asp-controller="CRUD" id="boton">Comprar</a>
+        <label>BTC @CuentaBtc.VALOR_DOLAR = 1 U$D</label>
+    </div>
+</div>    
+<div class="container">
+    <a asp-action="Listar" asp-controller="CRUD" id="boton">Transferir</a>
+    <a asp-action="Listar" asp-controller="CRUD" id="boton">Depositar</a>
+    <a asp-action="Listar" asp-controller="CRUD" id="boton">Extraccion</a>
+</div>

@@ -1,0 +1,43 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "MisCuentas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card-header">
+        Cuenta Pesos
+    </div>
+    <div class="card-body">
+        <label>Numero de cuenta: @Model.cuentaPesos.numeroDeCuenta</label>
+        <label>CBU: @Model.cuentaPesos?.CBU</label>
+        <label>Alias: @Model.cuentaPesos?.alias</label>
+        <a asp-action="Trasferencia" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaPesos.id">Transferir</a>
+        <a asp-action="Depositar" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaPesos.id">Depositar</a>
+        <a asp-action="Extraccion" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaPesos.id">Extraccion</a>
+        <a asp-action="VerCuenta" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaPesos.id">Ver Cuenta</a>
+    </div>
+    <div class="card-header">
+        Cuenta Dolares
+    </div>
+    <div class="card-body">
+        <label>Numero de cuenta: @Model.cuentaDolares.numeroDeCuenta</label>
+        <label>CBU: @Model.cuentaDolares?.CBU</label>
+        <label>Alias: @Model.cuentaDolares?.alias</label>
+        <a asp-action="Trasferencia" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaDolares.id">Transferir</a>
+        <a asp-action="Depositar" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaDolares.id">Depositar</a>
+        <a asp-action="Extraccion" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaDolares.id">Extraccion</a>
+        <a asp-action="VerCuenta" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaDolares.id">Ver Cuenta</a>
+    </div>
+    <div class="card-header">
+        Cuenta Bitcoin
+    </div>
+    <div class="card-body">
+        <label>UUID: @Model.cuentaBtc.UUID</label>
+        <a asp-action="Trasferencia" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaBtc.id">Transferir</a>
+        <a asp-action="Depositar" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaBtc.id">Depositar</a>
+        <a asp-action="Extraccion" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaBtc.id">Extraccion</a>
+        <a asp-action="VerCuenta" asp-controller="Cuenta" id="boton" asp-route-id="@Model.cuentaBtc.id">Ver Cuenta</a>
+    </div>
+</div>
+

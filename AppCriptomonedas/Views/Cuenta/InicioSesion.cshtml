@@ -1,0 +1,42 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "InicioSesion";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AppCriptomonedas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AppCriptomonedas.styles.css" asp-append-version="true" />
+</head>
+<body>
+<h1>Inicio de sesion:</h1>
+<div>
+    <div form id="formularioLogin">
+        <div class="form-control">
+            <div class="col-md-6 text-center mb-5">
+             <form asp-action="InicioSesion" asp-controller="Cuenta" method="post"> 
+              <div class="mb-3">
+                <label class="form-label">Usuario: </label>
+                <input asp-for="userName" type="text" class="form-control" >    
+                <span asp-validation-for="userName" class="text-danger"></span>  
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Contraseña: </label>
+                <input asp-for="userPass" type="password" class="form-control" >
+                <span asp-validation-for="userPass" class="text-danger"></span>
+              </div>
+               <button id="boton" type="submit" class="btn btn-primary">Iniciar Sesion</button>
+               <label>No tienes una cuenta ?</label><a asp-action="RegistrarUsuario" asp-controller="Registro" class="btn btn-warning" id="boton"> Volver al listado </a> 
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

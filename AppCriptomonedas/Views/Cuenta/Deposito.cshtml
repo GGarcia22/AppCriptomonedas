@@ -1,0 +1,29 @@
+﻿@using AppCriptomonedas.Models.Transacciones
+@model Deposito
+@{
+    ViewData["Title"] = "Deposito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <div class="form-control">
+            <div class="col-md-6 text-center mb-5">
+             <form asp-action="Deposito" asp-controller="Cuenta" method="post"> 
+
+              <div class="mb-3">
+                  Depositar a
+                <label class="form-label">Numero: </label>
+                 <input asp-for="cuentaDestino" type="text" class="form-control" >
+                 <span asp-validation-for="cuentaDestino" class="text-danger"></span>  
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Monto a trasferir: </label>
+                <input asp-for="monto" type="number" class="form-control" >
+                 <span asp-validation-for="monto" class="text-danger"></span>  
+              </div>
+
+               <button id="boton" type="submit" class="btn btn-primary">Terminar</button>
+               <a asp-action="MisCuentas" asp-controller="Cuenta" class="btn btn-warning" id="boton"> Volver atras</a> 
+              </form>
+            </div>
+        </div>
+
